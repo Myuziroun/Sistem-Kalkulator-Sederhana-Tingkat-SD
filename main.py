@@ -4,11 +4,18 @@ from satuanJarak import centimeter_ke_kilomter, centimeter_ke_meter, centimeter_
 from satuanWaktu import second_to_minute, second_to_hour,  minute_to_hour, minute_to_second, hour_to_minute, hour_to_second;
 
 
-while True :
+while True:
     print("Menu Utama")
     print("1. Perhitungan Aritmatika (+, -, /, *) ")
     print("2. Perhitungan Bangun Datar ")
     print("3. Perhitungan Bangun Ruang ")
     print("4. Perhitungan Perubahan Waktu ")
     print("5. Perhitungan Perubahan Jarak ")
-    
+    choice = input("Masukan pilihan untuk melakukan perhitungan: ")
+    if choice.isdigit() :
+        choice = int(choice)
+        
+    elif choice.strip() == "":
+        print("Mohon maaf, wajib untuk diisi")
+    else:
+        print("Mohon maaf hanya bisa menggunakan angka")
