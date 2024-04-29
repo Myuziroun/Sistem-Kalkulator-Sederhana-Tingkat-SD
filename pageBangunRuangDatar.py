@@ -1,4 +1,4 @@
-from rumusBangunDatarRuang import k_belahKetupat, k_jarjarGenjang, k_layang_layang, k_lingkaran, k_persegi, k_persegiPanjang, k_segitiga, k_trapesium ;
+from rumusBangunDatarRuang import * ;
 
 def page_bangun_Datar() :
     bangun_datar_valid = False
@@ -89,6 +89,39 @@ def page_bangun_Datar() :
                     luas_menu = input("Masukan pilihan untuk melakukan perhitungan: ")
                     if luas_menu.isdigit():
                         luas_menu = int(luas_menu)
+                        if  luas_menu == 1 :
+                            sisi_persegi_luas = float(input("Masukan Nilai Sisi Persegi: "))
+                            print("Hasil Luas Persegi dengan panjang sisi {} cm adalah {} cm^2" .format(sisi_persegi_luas,L_Persegi(sisi_persegi)))
+                        elif luas_menu == 2:
+                            panjang_persegiPanjang_luas = float(input("Masukan Nilai Panjang Persegi Panjang: "))
+                            lebar_persegiPanjang_luas = float(input("Masukan Nilai Lebar Persegi Panjang: "))
+                            print("Hasil Luas Persegi Panjang dengan panjang {} dan lebar {} adalah {} cm^2" .format(panjang_persegiPanjang_luas, lebar_persegiPanjang_luas, L_persegiPanjang(panjang_persegiPanjang_luas, lebar_persegiPanjang_luas)))
+                        elif luas_menu == 3:
+                            diagonal_satu_belahKetupat_luas = float(input("Masukan nilai Diagonal 1: "))
+                            diagonal_dua_belahKetupat_luas = float(input("Masukan nilai Diagonal 2: "))
+                            print("Hasil Luas Belah Ketupat dengan Diagonal 1 {} cm dan Diagonal 2 {} cm adalah {} cm^2" .format(diagonal_satu_belahKetupat_luas, diagonal_dua_belahKetupat_luas, L_belahKetupat(diagonal_satu_belahKetupat_luas,diagonal_dua_belahKetupat_luas)))
+                        elif luas_menu == 4:
+                            panjang_jajarGenjang_luas = float(input("Masukan Nilai Panjang Jajar Genjang: "))
+                            lebar_jajarGenjang_luas = float(input("Masukan Nilai Lebar Jajar Genjang: "))
+                            print("Hasil Luas Jajar Genjang dengan Panjang {} cm dan Lebar {} cm adalah {} cm^2" .format(panjang_jajarGenjang_luas, lebar_jajarGenjang_luas, L_jajarGenjang(panjang_jajarGenjang_luas, lebar_jajarGenjang_luas)))
+                        elif luas_menu == 5:
+                            a_trapesium_luas = float(input("Masukan Nilai A Trapesium: "))
+                            b_trapesium_luas = float(input("Masukan Nilai B Trapesium: "))
+                            tinggi_trapesium_luas = float(input("Masukan Nilai Tinggi Trapesium: "))
+                            print("Hasil Luas Jajar Genjang dengan a {} cm, b {} cm, dan Tinggi {} cm adalah {} cm^2" .format(a_trapesium_luas, b_trapesium_luas, tinggi_trapesium_luas, L_trapesium(a_trapesium_luas, b_trapesium_luas, tinggi_trapesium_luas)))
+                        elif luas_menu == 6 :
+                            diagonal_satu_layang_luas = float(input("Masukan Nilai Diagonal 1 Layang - Layang: "))
+                            diagonal_dua_layang_luas = float(input("Masukan Nilai Diagonal 2 Layang - Layang: "))
+                            print("Hasil Luas Layang - Layng dengan Diagonal 1 {} cm dan Diagonal 2 {} adalah {} cm^2" .format(diagonal_satu_belahKetupat_luas, diagonal_dua_layang_luas, L_layang_layang(diagonal_satu_layang_luas, diagonal_dua_layang_luas)))
+                        elif luas_menu == 7 :
+                            alas_segitiga_luas = float(input("Masukan Nilai Alas Segitiga: "))
+                            tinggi_segitiga_luas = float(input("Masukan Nilai Tinggi Segitiga: "))
+                            print("Hasil Luas Segitiga dengan Alas {} cm dan Tinggi {} adalah {} cm^2" .format(alas_segitiga_luas, tinggi_segitiga_luas, L_Segitiga(alas_segitiga_luas, tinggi_segitiga_luas)))
+                        elif luas_menu == 8 :
+                            jari_lingkaran_luas = float(input("Masukan Nilai Jari - Jari Lingkaran: "))
+                            print("Hasil Luas Lingkaran dengan Jari - Jari {} cm adalah {} cm^2" .format(jari_lingkaran_luas, L_lingkaran(jari_lingkaran_luas)))                          
+                        elif luas_menu == 9 :
+                            luas_valid == True
                     elif luas_menu.strip() == "":
                         print("Mohon maaf, wajib untuk diisi")
                     else:
