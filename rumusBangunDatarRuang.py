@@ -80,7 +80,7 @@ def L_selinder(jari, tinggi) :
     luasPermukaan = luasSelimut + ( 2 * math.pi * jari**2)
     return luasSelimut, luasPermukaan
 # 7.  Luas Kerucut
-def L_kerucut(sisi, jari, tinggi) :
+def L_kerucut(sisi, jari) :
     luasSelimut = 2 * math.pi * sisi
     luasPermukaan = luasSelimut + (math.pi * jari**2)
     return luasSelimut, luasPermukaan

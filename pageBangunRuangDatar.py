@@ -122,6 +122,8 @@ def page_bangun_Datar() :
                             print("Hasil Luas Lingkaran dengan Jari - Jari {} cm adalah {} cm^2" .format(jari_lingkaran_luas, L_lingkaran(jari_lingkaran_luas)))                          
                         elif luas_menu == 9 :
                             luas_valid == True
+                        else:
+                            print("Mohon maaf hanya bisa memilih yang ada pada menu pilihan")
                     elif luas_menu.strip() == "":
                         print("Mohon maaf, wajib untuk diisi")
                     else:
@@ -147,7 +149,66 @@ def page_bangun_ruang() :
         if bangun_ruang_menu.isdigit():
             bangun_ruang_menu = int(bangun_ruang_menu)
             if bangun_ruang_menu == 1 :
-                print("Menu Perhitungan Luas Permukaan Bangun Ruang")
+                luas_permukaan_valid = False
+                while not luas_permukaan_valid :
+                    print("Menu Perhitungan Luas Permukaan Bangun Ruang")
+                    print("1. Luas Permukaan Kubus")
+                    print("2. Luas Permukaan Balok")
+                    print("3. Luas Permukaan Limas segiempat")
+                    print("4. Luas Permukaan Prisma Segitiga")
+                    print("5. Luas Permukaan Limas Segitiga")
+                    print("6. Luas Permukaan Selinder")
+                    print("7. Luas Permukaan Kerucut")
+                    print("8. Luas Permukaan Bola")
+                    print("9 . Kembali")
+                    luas_permukaan_menu = input("Masukan pilihan untuk melakukan perhitungan: ")
+                    if luas_permukaan_menu.isdigit() :
+                        luas_permukaan_menu = int(luas_permukaan_menu)
+                        if luas_permukaan_menu == 1:
+                            rusuk_kubus_luas = float(input("Masukan Nilai Rusuk Kubus: "))
+                            print("Hasil Luas Permukaan Kubus dengan Rusuk {}cm adalah {}cm^3" .format(rusuk_kubus_luas, L_kubus(rusuk_kubus_luas)))
+                        elif luas_permukaan_menu == 2:
+                            panjang_balok_luas = float(input("Masukan Nilai Panjang Balok: "))
+                            lebar_balok_luas = float(input("Masukan Nilai Lebar Balok: "))
+                            tinggi_balok_luas = float(input("Masukan Nilai Tinggi Balok: "))
+                            print("Hasil Luas Permukaan Balok dengan Panjang {}cm, Lebar {}cm dan Tinggi {}cm adalah {}cm^3" .format(panjang_balok_luas, lebar_balok_luas, tinggi_balok_luas, L_balok(panjang_balok_luas, lebar_balok_luas, tinggi_balok_luas)))
+                        elif luas_permukaan_menu == 3:
+                            sisi_limas_segiempat_luas = float(input("Masukan Nilai Sisi Limas Segiempat: "))
+                            tinggi_limas_segiempat_luas = float(input("Masukan Nilai Tinggi Limas Segiempat: "))
+                            print("Hasil Luas Permukaan Limas Segiempat dengan Sisi {}cm dan Tinggi {}cm  adalah {}cm^3" .format(sisi_limas_segiempat_luas, tinggi_limas_segiempat_luas,L_limas_SegiEmpat(sisi_limas_segiempat_luas, tinggi_limas_segiempat_luas)))
+                        elif luas_permukaan_menu == 4:
+                            a_prisma_luas = float(input("Masukan Nilai A Prisma: "))
+                            b_prisma_luas = float(input("Masukan Nilai B Prisma: "))
+                            c_prisma_luas = float(input("Masukan Nilai C Prisma: "))
+                            alas_prisma_luas = float(input("Masukan Nilai Alas Prisma: "))
+                            tinggi_prisma_luas = float(input("Masukan Nilai Tinggi Segitiga Prisma: "))
+                            Tinggi_prisma_luas = float(input("Masukan Nilai Tinggi Prisma: "))
+                            print("Hasil Luas Permukaan Prisma dengan a {}cm, b {}cm,"\
+                                  " c {}cm, alas {}cm tinggi segitiga {} cm dan tinggi prisma {}cm "\
+                                    "adalah {}cm^3" .format(a_prisma_luas, b_prisma_luas, c_prisma_luas, alas_prisma_luas, tinggi_prisma_luas, Tinggi_prisma_luas, L_prisma(a_prisma_luas, b_prisma_luas, c_prisma_luas, alas_prisma_luas, tinggi_prisma_luas, Tinggi_prisma_luas)))
+                        elif luas_permukaan_menu == 5:
+                            sisi_limas_segitiga_luas = float(input("Masukan Nilai Sisi Limas Segitiga: "))
+                            tinggi_limas_segitiga_luas = float(input("Masukan Nilai Tinggi Limas Segitiga: "))
+                            print("Hasil Luas Permukaan Limas Segitiga dengan Sisi {}cm dan Tinggi {}cm adalah {}cm^3" .format(sisi_limas_segitiga_luas,tinggi_limas_segitiga_luas, L_limas_Segi_tiga(sisi_limas_segitiga_luas,tinggi_limas_segitiga_luas)))
+                        elif luas_permukaan_menu == 6:
+                            jari_tabung_luas = float(input("Masukan Nilai Jari - Jari Tabung: "))
+                            tinggi_tabung_luas = float(input("Masukan Nilai Tinggi Tabung: "))
+                            print("Hasil Luas Permukaan Tabung dengan Jari - Jari {}cm, dan Tinggi {}cm adalah {}cm^3" .format(jari_tabung_luas,tinggi_tabung_luas, L_selinder(jari_tabung_luas,tinggi_tabung_luas)))
+                        elif luas_permukaan_menu == 7:
+                            sisi_Kerucut_luas = float(input("Masukan Nilai Sisi Kerucut: "))
+                            jari_Kerucut_luas = float(input("Masukan Nilai Jari - jari Kerucut: "))
+                            print("Hasil Luas Permukaan Kerucut dengan Sisi {}cm, dan Jari - Jari {}cm adalah {}cm^3" .format(sisi_Kerucut_luas, jari_Kerucut_luas, L_kerucut(sisi_Kerucut_luas, jari_Kerucut_luas)))
+                        elif luas_permukaan_menu == 8:
+                            jari_bola_luas = float(input("Masukan Nilai Jari - Jari Bola: "))
+                            print("Hasil Luas Permukaan Bola dengan Jari - Jari {}cm adalah {}cm^3" .format(jari_bola_luas, L_bola(jari_bola_luas)))
+                        elif luas_permukaan_menu == 9:
+                            luas_permukaan_valid = True
+                        else :
+                            print("Mohon maaf hanya bisa memilih yang ada pada menu pilihan")                 
+                    elif luas_permukaan_menu.strip() == "":
+                        print("Mohon maaf, wajib untuk diisi")
+                    else:
+                        print("Mohon maaf hanya bisa menggunakan angka")
             elif bangun_ruang_menu == 2:
                 print("Menu perhitungan Volume bangun Ruang")
             elif bangun_ruang_menu == 3:
