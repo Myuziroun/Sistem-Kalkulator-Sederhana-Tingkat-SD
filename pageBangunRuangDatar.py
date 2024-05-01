@@ -210,7 +210,62 @@ def page_bangun_ruang() :
                     else:
                         print("Mohon maaf hanya bisa menggunakan angka")
             elif bangun_ruang_menu == 2:
-                print("Menu perhitungan Volume bangun Ruang")
+                volume_valid = False
+                while not volume_valid :
+                    print("Menu perhitungan Volume bangun Ruang")
+                    print("1. Volume Kubus")
+                    print("2. Volume Balok")
+                    print("3. Volume Limas segiempat")
+                    print("4. Volume Prisma Segitiga")
+                    print("5. Volume Limas Segitiga")
+                    print("6. Volume Tabung")
+                    print("7. Volume Kerucut")
+                    print("8. Volume Bola")
+                    print("9 . Kembali")
+                    volume_menu = input("Masukan Pilihan untuk melakukan perhitungan: ")
+                    if volume_menu.isdigit():
+                        volume_menu = int(volume_menu)
+                        if volume_menu == 1 :
+                            rusuk_kubus_volume =float(input("Masukan Nilai Rusuk Kubus: "))
+                            print("Hasil perhitungan Volume Kubus dengan Rusuk {}cm adalah {}cm^3" .format(rusuk_kubus_volume,V_kubus(rusuk_kubus_volume)))
+                        elif volume_menu == 2 :
+                            panjang_balok_volume =float(input("Masukan Nilai Panjang Balok: "))
+                            lebar_balok_volume =float(input("Masukan Nilai Lebar Balok: "))
+                            tinggi_balok_volume =float(input("Masukan Nilai Tinggi Balok: "))
+                            print("Hasil perhitungan Volume Balok dengan Panjang {}cm, Lebar {}cm, dan Tinggi {}cm adalah {}cm^3" .format(panjang_balok_volume,lebar_balok_volume, tinggi_balok_volume,V_balok(panjang_balok_volume,lebar_balok_volume, tinggi_balok_volume)))
+                        elif volume_menu == 3 :
+                            sisi_limas_segiempat_volume =float(input("Masukan Nilai Rusuk Limas Segiempat: "))
+                            tinggi_limas_segiempat_volume =float(input("Masukan Nilai Rusuk Limas Segiempat: "))
+                            print("Hasil perhitungan Volume Limas Segiempat dengan Sisi {}cm dan Tinggi {}cm adalah {}cm^3" .format(sisi_limas_segiempat_volume, tinggi_limas_segiempat_volume,V_limas_segiempat(sisi_limas_segiempat_volume, tinggi_limas_segiempat_volume)))
+                        elif volume_menu == 4 :
+                            alas_prisma_segitiga_volume =float(input("Masukan Nilai Alas Prisma Segitiga: "))
+                            tinggi_prisma_segitiga_volume =float(input("Masukan Nilai Tinggi Segitiga: "))
+                            Tinggi_prisma_segitiga_volume =float(input("Masukan Nilai Tinggi Prisma: "))
+                            print("Hasil perhitungan Volume Prisma Segitiga dengan Alas {}cm, Tinggi Segitiga {}cm, dan Tinggi Prisma {}cm adalah {}cm^3" .format(alas_prisma_segitiga_volume,tinggi_prisma_segitiga_volume,Tinggi_prisma_segitiga_volume,V_prisma_Segitiga(alas_prisma_segitiga_volume,tinggi_prisma_segitiga_volume,Tinggi_prisma_segitiga_volume)))
+                        elif volume_menu == 5 :
+                            alas_limas_Segitiga_volume =float(input("Masukan Nilai Alas Limas Segitiga: "))
+                            tinggi_limas_Segitiga_volume =float(input("Masukan Nilai Tinggi Segitiga: "))
+                            Tinggi_limas_Segitiga_volume =float(input("Masukan Nilai Tinggi Limas Segitiga: "))
+                            print("Hasil perhitungan Volume Limas Segitiga dengan Alas {}cm, Tinggi Segitiga {}cm, dan Tinggi Prisma {}cm adalah {}cm^3" .format(alas_limas_Segitiga_volume,tinggi_limas_Segitiga_volume,Tinggi_limas_Segitiga_volume,V_limas_Segi_tiga(alas_limas_Segitiga_volume,tinggi_limas_Segitiga_volume,Tinggi_limas_Segitiga_volume)))
+                        elif volume_menu == 6 :
+                            jari_tabung_volume =float(input("Masukan Nilai Jari - Jari Tabung: "))
+                            tinggi_tabung_volume =float(input("Masukan Nilai Tinggi Tabung: "))
+                            print("Hasil perhitungan Volume Tabung dengan Jari - Jari {}cm, dan Tinggi {}cm adalah {}cm^3" .format(jari_tabung_volume,tinggi_tabung_volume,V_tabung(jari_tabung_volume, tinggi_tabung_volume)))
+                        elif volume_menu == 7 :
+                            jari_kerucut_volume =float(input("Masukan Nilai Jari - Jari Kerucut: "))
+                            tinggi_kerucut_volume =float(input("Masukan Nilai Tinggi Kerucut: "))
+                            print("Hasil perhitungan Volume Kerucut dengan Jari - Jari {}cm, dan Tinggi {}cm adalah {}cm^3" .format(jari_kerucut_volume, tinggi_kerucut_volume,V_kerucut(jari_kerucut_volume, tinggi_kerucut_volume)))
+                        elif volume_menu == 8 :
+                            jari_bola_volume =float(input("Masukan Nilai Jari - Jari Bola: "))
+                            print("Hasil perhitungan Volume Bola dengan Jari - Jari {}cm adalah {}" .format(jari_bola_volume,V_bola(jari_bola_volume)))
+                        elif volume_menu == 9 :
+                            volume_valid = True
+                        else:
+                            print("Mohon maaf hanya bisa memilih yang ada pada menu pilihan")                 
+                    elif volume_menu.strip() == "":
+                        print("Mohon maaf, wajib untuk diisi")
+                    else:
+                        print("Mohon maaf hanya bisa menggunakan angka")
             elif bangun_ruang_menu == 3:
                 bangun_ruang_valid = True
             else :
